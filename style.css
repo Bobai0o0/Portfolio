@@ -1,0 +1,260 @@
+/* style.css 🌟✨*/
+:root {
+    --bg-color: #0d0d0d;
+    --text-primary: #ffffff;
+    --text-secondary: #a1a1a1;
+    --accent: #ffffff;
+    --glass: rgba(255, 255, 255, 0.05);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+main {
+  background-image: url('imgs/gray.gif');
+  background-size: cover;
+  background-position: center;
+  height: 100vh; 
+}
+
+/* Navogtion Bar ;P 🌟*/
+.nav-container {
+    position: fixed;
+    top: 30px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.nav-pill {
+    background: var(--glass);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px 30px;
+    border-radius: 50px;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.4s ease;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--text-primary);
+    transform: translateY(-2px);
+}
+
+
+/* Body Section :3 🌟*/ 
+.intro-section {
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.name-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 8vw, 8rem);
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.name-title span { color: #555; }
+
+.subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+/* About Me :D 🌟*/ 
+.about-section {
+    height: 80vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 120px 10% 0; /* pushes content below navbar */
+    text-align: left;
+}
+
+.about-content {
+    max-width: 500px;
+}
+
+.about-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 10vw, 8rem);
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.about-title span {
+    color: #555;
+}
+
+.about-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.about-text {
+    font-size: 1rem;
+    color: #dbd6d6;
+    line-height: 1.7;
+}
+
+.about-image img {
+    width: 380px;
+    max-width: 100%;
+    object-fit: cover;
+    filter: grayscale(100%); 
+}
+
+/*To respond to screen size changes .-. 🌟*/
+@media (max-width: 900px) {
+    .about-section {
+        flex-direction: column;
+        height: auto;
+        padding: 60px 5%;
+        padding-top: 160px;
+    }
+
+    .about-image {
+        margin-top: 40px;
+    }
+
+    .about-image img {
+        width: 280px;
+    }
+}
+
+
+/* Images and Animations :D ✨*/
+.featured-image {
+    padding: 0 5vw 10vh;
+}
+
+.image-container {
+    width: 100%;
+    height: 70vh;
+    overflow: hidden;
+    position: relative;
+    border-radius: 5px;
+}
+
+.desaturate {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%) brightness(0.7);
+    transition: filter 0.8s ease, transform 1.2s ease;
+}
+
+.image-container:hover .desaturate {
+    filter: grayscale(40%) brightness(0.9);
+    transform: scale(1.05);
+}
+
+/* Journal Section ;) 🌟*/
+/* Journal Banner ^-^ ✨*/
+.journal-banner {
+    padding: 0 3vw;
+    margin-top: -125px; /* Moves it up a bit */
+    margin-bottom: 60px;
+}
+
+.journal-banner:hover .desaturate {
+    filter: grayscale(40%) brightness(0.9);
+}
+
+.banner-wrapper {
+    width: 100%;
+    height: 300px; /* Makes short .-. */
+    overflow: hidden;
+    position: relative;
+    border-radius: 4px;
+}
+
+.banner-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Journal Entries :3 🌟*/
+.journal-format {
+    max-width: 1000px;
+    margin: 0 auto 50px;
+    padding: 0 3vw;
+}
+
+.journal-entry {
+    padding: 10px 0;
+}
+
+.journal-entry h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.journal-entry p {
+    color: var(--text-secondary);
+    margin-bottom: 20px;
+}
+
+/*.glass-box {
+    /* White background with 0.6 (60%) opacity 
+    background-color: rgba(45, 40, 40, 0.6); 
+    
+    /* This creates the "frosted" look (works in most modern browsers) 
+    /* backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* For Safari support 
+    
+    /* Padding and Rounded Corners 
+    padding: 1rem;
+    border-radius: 4px;
+    
+    /* Subtle border to make it pop against the background 
+    border: 1px solid rgba(77, 69, 69, 0.2);
+    
+    /* Optional: subtle shadow for depth 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+    max-width: 1300px;
+    margin: 20px auto;
+}*/
+
+.divider {
+    border: 0;
+    border-top: 1px solid rgba(255,255,255,0.1);
+}
